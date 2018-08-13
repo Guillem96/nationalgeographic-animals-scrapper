@@ -55,7 +55,7 @@ class Animal(object):
             (self.get_kingdom() if self.get_kingdom() != "" else "-")  + "," + \
             (self.get_diet() if self.get_diet() != "" else "-")  + "," + \
             (self.get_average_life_span() if self.get_average_life_span() != "" else "-")  + "," + \
-            (self.get_weight() if self.get_weight() != "" else "-")  + "," + \
+            (self.get_weight() if self.get_weight() != "" else "-").replace(",", ".")  + "," + \
             (self.get_size_relative_to_human() if self.get_size_relative_to_human() != "" else "-")  + "," + \
             (self.get_iunc_red_list() if self.get_iunc_red_list() != "" else "-") + ","
 
