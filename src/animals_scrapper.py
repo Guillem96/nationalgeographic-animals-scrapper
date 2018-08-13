@@ -8,16 +8,16 @@ from animal import Builder
 class AnimalsScrapper(object):
     BASE_URL = "https://www.nationalgeographic.com/animals/"
     ENDPOINTS = [
-        # "mammals",
-         "birds",
-        # "reptiles",
-        # "amphibians",
-        # "invertebrates",
+        "mammals",
+        "birds",
+        "reptiles",
+        "amphibians",
+        "invertebrates",
         "fish"
     ]
 
-    NUMBER_EACH_KINGDOM = 2  # MAX 6 species
-
+    NUMBER_EACH_KINGDOM = 6  # MAX 6 species
+    METADATA = "Image,Common Name,Scientific Name,Kingdom,Diet,Life Span,Weight,Relative size,IUNC,IUNC Description\n"
     FACTS_KEYS = {
         "Common Name:": lambda animal_builder, value: animal_builder.common_name(value),
         "Scientific Name:": lambda animal_builder, value: animal_builder.scientific_name(value),
@@ -25,7 +25,6 @@ class AnimalsScrapper(object):
         "Diet:": lambda animal_builder, value: animal_builder.diet(value),
         "Average life span in The Wild:": lambda animal_builder, value: animal_builder.average_life_span(value),
         "Weight:": lambda animal_builder, value: animal_builder.weight(value),
-        "Size relative to a 6-ft man:": lambda animal_builder, value: animal_builder.size_relative_to_human(value),
     }
 
     def download_data(self):
