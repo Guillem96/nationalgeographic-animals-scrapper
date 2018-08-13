@@ -1,0 +1,12 @@
+# Geckodriver
+geckodriver.exe
+geckodriver.log
+
+# Visual code
+.vscode
+
+# Python
+__init__.py
+*.pyc
+__pycache__
+src/__pycache__
