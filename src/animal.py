@@ -57,12 +57,12 @@ class Animal(object):
             (self.get_average_life_span() if self.get_average_life_span() != "" else "-")  + "," + \
             (self.get_weight() if self.get_weight() != "" else "-")  + "," + \
             (self.get_size_relative_to_human() if self.get_size_relative_to_human() != "" else "-")  + "," + \
-            (self.get_iunc_red_list() if self.get_iunc_red_list() != "" else "-") 
+            (self.get_iunc_red_list() if self.get_iunc_red_list() != "" else "-") + ","
 
         if self.get_iunc_red_list() in Animal.__IUNC_RED_LIST:
-            csv_str += "," + \
-                Animal.__IUNC_RED_LIST[self.get_iunc_red_list()]
-        
+            csv_str += Animal.__IUNC_RED_LIST[self.get_iunc_red_list()]
+        else:
+            csv_str += "-"
         return csv_str + "\n"
 
 
